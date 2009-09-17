@@ -1,0 +1,11 @@
+<h1>Customer Order Form</h1>
+
+[% some_errors %] <!-- validaterm related -->
+<form method="POST" action="[% c.query().url() %]/orders/add">
+
+Customer: [% customer_select %] 
+	  [% err_customer %]  <!-- validaterm related -->
+	  <br/>
+</br>
+<input type="submit" value="Place Order"/>
+</form>

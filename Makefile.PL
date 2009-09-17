@@ -26,4 +26,5 @@ WriteMakefile(
 		'CGI::Application::Plugin::SuperForm'    => 0,
 		'CGI::Application::Plugin::TT'           => 0,
 	},
+        LICENSE => 'perl',
 );

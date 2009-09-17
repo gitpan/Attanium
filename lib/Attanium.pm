@@ -4,7 +4,7 @@ use warnings;
 use base 'CGI::Application';
 
 use vars qw($VERSION);
-$VERSION = '0.001';
+$VERSION = '0.002';
 
 
 # Load recommended plugins by default. 
@@ -14,7 +14,6 @@ use CGI::Application::Plugin::Session;
 use CGI::Application::Plugin::ValidateRM; 
 use CGI::Application::Plugin::ConfigAuto 'cfg';
 use CGI::Application::Plugin::FillInForm 'fill_form';
-use CGI::Application::Plugin::ErrorPage  'error';
 use CGI::Application::Plugin::DBH 	  qw(dbh_config dbh); 
 use CGI::Application::Plugin::LogDispatch;
 use CGI::Application::Plugin::TT;
@@ -28,11 +27,53 @@ use CGI::Application::Plugin::DBIC::Schema qw/dbic_config schema resultset/;
 
 =head1 NAME
 
-Attanium - A medium-weight, blister-free web framework based on CGI-App.
+Attanium - A medium-weight, MVC, DB web framework.
 
-=head1 SYNOPSIS
+=head2 SYNOPSIS
 
-  use Attanium;
+A simple, medium-weight, MVC web framework build on CGI::Application. The framework combines tested, well known plugins and helper scripts to provide a rapid development environment.
+
+The bundled plugins mix the following methods into your controller runmodes:
+
+    $c->forward(runmood)
+
+    $c->redirect(url)
+
+    $c->tt_param(name=>value)
+
+    $c->tt_process()
+
+    $c->schema()->resultset("Things")->find($id)
+
+    $c->resultset("Things)->search({color=>"red"})
+
+    $c->log->info('This also works')
+
+    my $value = $c->session->param('key')
+
+    my $conf_val = $c->cfg('field');
+
+    my $select = $c->superform->select(
+                        name    => 'select',
+                        default => 2,
+                        values  => [ 0, 1, 2, 3 ],
+                        labels  => {
+                                0 => 'Zero',
+                                1 => 'One',
+                                2 => 'Two',
+                                3 => 'Three'
+                        }
+                );
+
+
+    sub method: Runmode {my $c = shift; do_something();}
+
+    $c->fill_form( \$template )
+
+    my  $results = $ ->check_rm(
+              'form_display','_form_profile') 
+              || return $c->check_rm_error_page;
+
 
 
 =head1 DESCRIPTION

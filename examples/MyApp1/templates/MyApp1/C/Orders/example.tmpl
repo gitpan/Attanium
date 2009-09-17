@@ -1,0 +1,11 @@
+<h1> Orders for Customer [% customer.id %] ([% customer.first_name %] [% customer.last_name %])</h1>
+
+<ul>
+  [% FOREACH order = customer.orders %]
+    <li>Order No: [% order.id %]</li>
+  [% END %]
+</ul>
+
+
+<h1>The Owner of order 1 is Customer No. [% order1.customer.id %]</h1>
+
