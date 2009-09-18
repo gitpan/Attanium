@@ -8,7 +8,7 @@ WriteMakefile(
 	NAME         => 'Attanium',
 	VERSION_FROM => 'lib/Attanium.pm',
 	AUTHOR       => 'Gordon Van Amburg (vanamburg@cpan.org)',
-	ABSTRACT     => 'A capable, medium weight web framework.',
+	ABSTRACT     => 'A medium-weight MVC web framework.',
 	PREREQ_PM    => {
 		'Test::Simple'                           => 0.44,
 		'CGI::Application::Plugin::ValidateRM'   => 0,
@@ -25,6 +25,7 @@ WriteMakefile(
 		'CGI::Application::Plugin::DBIC::Schema' => 0,
 		'CGI::Application::Plugin::SuperForm'    => 0,
 		'CGI::Application::Plugin::TT'           => 0,
+                'CGI::Application::Plugin::AutoRunmode'  => 0.16,
 	},
         LICENSE => 'perl',
 );
