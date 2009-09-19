@@ -1,7 +1,5 @@
 Revision history for Perl module Attanium
 
-0.003 - Updated Makefile.PL with missing dependency.
-0.002 - Updated documentation.
 0.01 Tue Sep  8 16:41:42 2009
     - original version; created by ExtUtils::ModuleMaker 0.51
 

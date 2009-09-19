@@ -1,7 +1,7 @@
 --- #YAML:1.0
 name:               Attanium
-version:            0.003
-abstract:           A medium-weight MVC web framework.
+version:            0.004
+abstract:           Obsolete: renamed CGI::Application::Structured
 author:
     - Gordon Van Amburg (vanamburg@cpan.org)
 license:            perl
@@ -13,7 +13,7 @@ build_requires:
 requires:
     CGI::Application:     4
     CGI::Application::Dispatch:  0
-    CGI::Application::Plugin::AutoRunmode:  0.16
+    CGI::Application::Plugin::AutoRunmode:  0
     CGI::Application::Plugin::ConfigAuto:  0
     CGI::Application::Plugin::DBH:  0
     CGI::Application::Plugin::DBIC::Schema:  0
